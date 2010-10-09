@@ -1,0 +1,21 @@
+%h1 Listing transaction_taggings
+
+%table
+  %tr
+    %th Transaction
+    %th Tag
+    %th
+    %th
+    %th
+
+  - @transaction_taggings.each do |transaction_tagging|
+    %tr
+      %td= transaction_tagging.transaction_id
+      %td= transaction_tagging.tag_id
+      %td= link_to 'Show', transaction_tagging
+      %td= link_to 'Edit', edit_transaction_tagging_path(transaction_tagging)
+      %td= link_to 'Destroy', transaction_tagging, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Transaction tagging', new_transaction_tagging_path

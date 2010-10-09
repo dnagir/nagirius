@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Transaction:
+  = @transaction_tagging.transaction_id
+%p
+  %b Tag:
+  = @transaction_tagging.tag_id
+
+= link_to 'Edit', edit_transaction_tagging_path(@transaction_tagging)
+\|
+= link_to 'Back', transaction_taggings_path

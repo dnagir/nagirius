@@ -1,0 +1,21 @@
+!!!
+%html
+  %head
+    %title= "#{@title && (@title + ' - ')}Nagirius"
+    = stylesheet_link_tag :all
+    %meta(charset='UTF-8')
+    %meta(name="description" content="The tools a human needs")
+    %meta(name="keywords" content="expense tracking")
+    %meta(name="author" content="Dmytrii Nagirniak, Dmitriy Nagirnyak")
+
+    %script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js')
+    /[if lt IE 9]
+      %script(src="http://html5shiv.googlecode.com/svn/trunk/html5.js")
+    = javascript_include_tag 'rails', 'application'
+    = csrf_meta_tag
+  %body
+    #container
+      %header
+      %section#content
+        = yield
+      %footer

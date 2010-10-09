@@ -1,0 +1,16 @@
+= form_for @transaction_tagging do |f|
+  -if @transaction_tagging.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@transaction_tagging.errors.count, "error")} prohibited this transaction_tagging from being saved:"
+      %ul
+        - @transaction_tagging.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :transaction_id
+    = f.text_field :transaction_id
+  .field
+    = f.label :tag_id
+    = f.text_field :tag_id
+  .actions
+    = f.submit 'Save'
